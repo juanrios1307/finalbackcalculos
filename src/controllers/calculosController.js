@@ -18,21 +18,20 @@ Controller.getFibonacci = async (req, res) => {
 calcularFibonacci=(n)=>{
    return new Promise((resolve,reject)=>{
        var arr=[]
-       if(n<2){
-           arr[0]=1
-           arr[1]=1
-       }else {
+       arr[0]=1
 
-           arr[0]=1
+       if(n==1){
+
+       }if(n==2){
+
+           arr[1]=1
+       }else{
+
            arr[1]=1
 
            for (var i = 2; i < n; i++) {
                arr[i]=arr[i-1]+arr[i-2]
 
-           }
-
-           for(var i=0;i <n; i++){
-               console.log(arr[i])
            }
        }
 
