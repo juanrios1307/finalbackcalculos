@@ -13,8 +13,8 @@ app.use(cors({origin:true}))
 
 
 //Declaracion de rutas para manejo de api
-app.use('/api/',require('./routes/calculosRoute'))
-
+app.use('/api/calculos',require('./routes/calculosRoute'))
+app.use('/api/medidas',require('./routes/medidasRoute'))
 //start server
 app.listen(process.env.PORT || 5000,()=>{
     console.log('Listen in the port ',process.env.PORT || 5000)
