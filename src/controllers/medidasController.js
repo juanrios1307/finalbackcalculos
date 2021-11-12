@@ -7,8 +7,10 @@ Controller.getAreaPerimetroTriangulo = (req,res) =>{
 
     var lado1=req.headers['lado1']
     var lado2=req.headers['lado2']
-    if(base != undefined && base>0 && altura != undefined && altura>0 &&
-        lado1 != undefined && lado1>0 && lado2 != undefined && lado2>0  ){
+    if(base != undefined && base>0 && !isNaN(base) &&
+        altura != undefined && altura>0 && !isNaN(altura) &&
+        lado1 != undefined && lado1>0 && !isNaN(lado1) &&
+        lado2 != undefined && lado2>0 && !isNaN(lado2) ){
 
         var data={
             area:base*altura/2,
@@ -24,7 +26,7 @@ Controller.getAreaPerimetroTriangulo = (req,res) =>{
 Controller.getAreaPerimetroCirculo = (req,res) =>{
     var radio=req.headers['radio']
 
-    if(radio != undefined && radio>0 ){
+    if(radio != undefined && radio>0 && !isNaN(radio)){
 
         var data={
             area:Math.PI*Math.pow(radio,2),
@@ -41,7 +43,8 @@ Controller.getAreaPerimetroRectangulo = (req,res) =>{
     var lado1=req.headers['lado1']
     var lado2=req.headers['lado2']
 
-    if(lado1 != undefined && lado1>0 && lado2 != undefined && lado2>0  ){
+    if(lado1 != undefined && lado1>0 && !isNaN(lado1) &&
+        lado2 != undefined && lado2>0 && !isNaN(lado2) ){
 
         var data={
             area:lado1*lado2,

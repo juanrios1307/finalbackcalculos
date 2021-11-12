@@ -3,7 +3,7 @@ const Controller={}
 Controller.getFibonacci = async (req, res) => {
     var arr = []
     var n = req.headers['number']
-    if (n != undefined && n > 0) {
+    if (n != undefined && n > 0 && !isNaN(n)) {
 
         arr=await calcularFibonacci(n)
 
@@ -44,7 +44,7 @@ Controller.getFactorial = (req,res) =>{
     var n=req.headers['number']
     var fact=n
 
-    if(n!= undefined && n>0 ) {
+    if(n!= undefined && n>0 && !isNaN(n) ) {
         for (var i = n - 1; i > 0; i--) {
             fact *= i
         }
